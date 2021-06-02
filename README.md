@@ -1,5 +1,3 @@
-# Synfig_Animation
-2d animation just made for an hackathon
+# Opengl Learning
+...
 
-
-This is just a simple 2d animation project using synfig studio.

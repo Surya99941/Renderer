@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <window.h>
+
+float positions[] = {
+    -1.0f,-1.0f,0.0f,
+     1.0f,-1.0f,0.0f,
+     0.0f, 1.0f,0.0f
+};
+
+
+int main(){
+    Window canvas(1366,768,"Hello peeps!",3,3);
+
+    unsigned int VBO;
+    glGenBuffers(1,&VBO);
+    glBindBuffer(GL_ARRAY_BUFFER,VBO);
+    glBufferData(GL_ARRAY_BUFFER,sizeof(positions),&positions,GL_STATIC_DRAW);
+
+
+    while(!canvas.isclosed()){
+        float color = 0.95;
+        glClearColor(color,color,color,1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
+        canvas.update();
+    }
+
+    return 0;
+}

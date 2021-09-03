@@ -18,26 +18,30 @@ const char *vertexShaderSource = "#version 330 core\n"
     "}\0";
 
 const char *fragmentShaderSource = "#version 330 core\n"
-    "out vec4 gl_color;\n"
+    "out vec4 FragColor;\n"
     "void main()\n"
     "{\n"
-    "   gl_color = vec4(1.0, 1.0, 1,0, 1.0);\n"
+    "   FragColor = vec4(1.0f, 1.0f, 1.0f, 1.0f);\n"
     "}\0";
 
 
 int main()
 {
+    Window mywindow(1280,720,"Glfw Window");
     unsigned int VBO;
     unsigned int VAO;
     glGenBuffers(1,&VBO);
     glGenVertexArrays(1,&VAO);
-    glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER,VBO);
+    glBindVertexArray(VAO);
     glBufferData(GL_ARRAY_BUFFER,sizeof(vertices),&vertices,GL_STATIC_DRAW);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
     unsigned int vertexshader;
+    unsigned int fragmentshader;
+    unsigned int shaderprogram;
+
     vertexshader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexshader,1,&vertexShaderSource,NULL);
     glCompileShader(vertexshader);
@@ -49,17 +53,15 @@ int main()
         fprintf(stderr,infolog);
     }
 
-    unsigned int fragmentshader;
     fragmentshader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentshader,1,&fragmentShaderSource,NULL);
     glCompileShader(fragmentshader);
-    glGetShaderiv(vertexshader,GL_COMPILE_STATUS,&success);
+    glGetShaderiv(fragmentshader,GL_COMPILE_STATUS,&success);
     if(!success){
-        glGetShaderInfoLog(vertexshader,512,NULL,infolog);
+        glGetShaderInfoLog(fragmentshader,512,NULL,infolog);
         fprintf(stderr,infolog);
     }
 
-    unsigned int shaderprogram;
     shaderprogram = glCreateProgram();
     glAttachShader(shaderprogram,vertexshader);
     glAttachShader(shaderprogram,fragmentshader);
@@ -73,13 +75,12 @@ int main()
     glDeleteShader(vertexshader);
     glDeleteShader(fragmentshader);
 
-
-    Window mywindow(1280,720,"Glfw Window");
     while(mywindow.isopen()){
         mywindow.swapbuffers();
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-        glDrawArrays(GL_TRIANGLES,0,3);
+        glClearColor(0.8f, 0.8f, 0.9f, 1.0f);
+        glUseProgram(shaderprogram);
         glClear(GL_COLOR_BUFFER_BIT);
+        glDrawArrays(GL_TRIANGLES,0,3);
     }
     return 0;
 }

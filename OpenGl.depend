@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1630334769 source:/home/suryasiva/Programs/OpenGl/OpenGl/main.cpp
+	<iostream>
+	<Window.h>
+
+1630312814 source:/home/suryasiva/Programs/OpenGl/OpenGl/src/glad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<glad/glad.h>
+	<windows.h>
+	<winapifamily.h>
+	<dlfcn.h>
+
+1630312814 /home/suryasiva/Programs/OpenGl/OpenGl/include/glad/glad.h
+	<KHR/khrplatform.h>
+
+1630312814 /home/suryasiva/Programs/OpenGl/OpenGl/include/KHR/khrplatform.h
+	<stdint.h>
+	<inttypes.h>
+	<stdint.h>
+
+1630334635 source:/home/suryasiva/Programs/OpenGl/OpenGl/src/Window.cpp
+	"Window.h"
+
+1630428893 /home/suryasiva/Programs/OpenGl/OpenGl/include/Window.h
+	<glad/glad.h>
+	<GLFW/glfw3.h>
+	<stdio.h>
+
+1630640119 source:d:\programming\opengl\src\glad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<glad/glad.h>
+	<windows.h>
+	<winapifamily.h>
+	<dlfcn.h>
+
+1630642262 d:\programming\opengl\include\glad\glad.h
+	<KHR/khrplatform.h>
+
+1630642261 d:\programming\opengl\include\khr\khrplatform.h
+	<stdint.h>
+	<inttypes.h>
+	<stdint.h>
+
+1630948595 source:d:\programming\opengl\src\window.cpp
+	"Window.h"
+
+1630947919 d:\programming\opengl\include\window.h
+	<glad/glad.h>
+	<GLFW/glfw3.h>
+	<stdio.h>
+	<Log.h>
+
+1631175843 source:d:\programming\opengl\main.cpp
+	<iostream>
+	<Window.h>
+	<Shader.h>
+
+1631173105 d:\programming\opengl\include\log.h
+	<cstdio>
+
+1630948122 source:d:\programming\opengl\src\log.cpp
+	"Log.h"
+
+1631175972 d:\programming\opengl\include\shader.h
+	<stdio.h>
+	<string.h>
+	<cstdlib>
+	<glad/glad.h>
+	<GLFW/glfw3.h>
+	<Log.h>
+	<errno.h>
+
+1631176726 source:d:\programming\opengl\src\shader.cpp
+	"Shader.h"
+

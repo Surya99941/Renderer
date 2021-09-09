@@ -7,7 +7,7 @@
     APIs: gl=3.3
     Profile: core
     Extensions:
-        
+
     Loader: True
     Local files: False
     Omit khrplatform: False
@@ -47,7 +47,8 @@
 extern "C" {
 #endif
 
-struct gladGLversionStruct {
+struct gladGLversionStruct
+{
     int major;
     int minor;
 };

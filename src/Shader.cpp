@@ -19,6 +19,7 @@ Shader::Shader(const char* filepath)
     m_fragmentshader = glCreateShader(GL_FRAGMENT_SHADER);
     m_compile_shader(m_vertexshader,vertexsource);
     m_compile_shader(m_fragmentshader,fragmentsource);
+    m_add_program()
     free(vertexsource);
     free(fragmentsource);
 }

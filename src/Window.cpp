@@ -1,7 +1,7 @@
 #include "Window.h"
 
 Window::Window(int width,int height,char* title)
-    :windowLog("D:\\programming\\OpenGl\\data\\logs\\window.log")
+    :windowLog("./data/logs/glfw.log")
 {
     glfwSetErrorCallback(s_errorcallback);
     if(glfwInit())

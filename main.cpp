@@ -1,11 +1,12 @@
 #include <iostream>
 #include <Window.h>
-#include<signal.h>
+#include <signal.h>
+
+
 #define ASSERT(x) if(!(x)) raise(SIGTRAP)
 #define GLCall(x) GLClearError();\
     x;\
     ASSERT(GLLogCall(#x,__FILE__,__LINE__))
-using namespace std;
 
 static void GLClearError()
 {
@@ -22,10 +23,10 @@ static bool GLLogCall(const char* function ,const char* file ,int line)
 }
 
 float vertices[] = {
-     1.0f,  1.0f, 0.0f, //top right
-     1.0f,  0.5f, 0.0f, //right
-    -1.0f,  1.0f, 0.0f, //top left
-    -1.0f,  0.5f, 0.0f  //left
+     0.5f,  0.5f, 0.0f, //top right
+     0.5f, -0.5f, 0.0f, //bottom right
+    -0.5f,  0.5f, 0.0f, //top left
+    -0.5f, -0.5f, 0.0f  //bottom left
 };
 
 unsigned int indices[] = {
